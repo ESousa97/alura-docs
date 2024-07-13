@@ -42,7 +42,7 @@ cd aluradocs
 
 2. **Instale as Dependências**
 
-```Copiar código
+```bash
 
 npm install
 
