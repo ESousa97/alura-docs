@@ -52,25 +52,21 @@ A arquitetura do AluraDocs é baseada no padrão Cliente-Servidor, com uma clara
 graph TD
     subgraph "Cliente (Navegador Web)"
         direction LR
-        A[index.html / documento.html] -- Interação do Usuário --> B{Lógica de UI (index.js / documento.js)};
-        B -- Emite/Recebe Eventos --> C[Módulo Socket (socket-front-*.js)];
+        A["index.html / documento.html"] --> B["Lógica de UI (index.js / documento.js)"]
+        B --> C["Módulo Socket (socket-front-*.js)"]
     end
-
     subgraph "Servidor (Node.js)"
         direction LR
-        E[Servidor HTTP (Express)] -- Serve Arquivos Estáticos --> A;
-        F[Servidor Socket.IO] -- Conexão WebSocket --> C;
-        F -- Orquestra Eventos --> G{Lógica de Negócio (socket-back.js)};
-        G -- Solicita/Persiste Dados --> H[Camada de Acesso a Dados (documentosDb.js)];
+        E["Servidor HTTP (Express)"] --> A
+        F["Servidor Socket.IO"] --> C
+        F --> G["Lógica de Negócio (socket-back.js)"]
+        G --> H["Camada de Acesso a Dados (documentosDb.js)"]
     end
-
     subgraph "Banco de Dados"
-        I[MongoDB Atlas]
+        I["MongoDB Atlas"]
     end
-
-    C <--> F;
-    H -- Conexão --> I;
-
+    C <--> F
+    H --> I
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style I fill:#9f9,stroke:#333,stroke-width:2px
     style F fill:#ccf,stroke:#333,stroke-width:2px
@@ -319,3 +315,6 @@ Este projeto é distribuído sob a **Licença MIT**, permitindo uso, modificaç�
 <p align="center">
   <em>Desenvolvido com ❤️ por José Enoque - Explorando o poder da comunicação em tempo real</em>
 </p>
+
+
+> ✨ **Criado em:** 8 de jul. de 2024 às 19:56
