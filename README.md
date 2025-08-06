@@ -318,4 +318,3 @@ Este projeto é distribuído sob a **Licença MIT**, permitindo uso, modificaç�
 
 
 > ✨ **Criado em:** 8 de jul. de 2024 às 19:56
-
