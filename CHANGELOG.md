@@ -7,3 +7,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 - Inicialização de qualidade A+
+- Atualizações de documentação (README, segurança e código de conduta)

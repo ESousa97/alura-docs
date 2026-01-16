@@ -1,27 +1,21 @@
 # Alura Docs
 
-![CI](https://img.shields.io/badge/CI-configurar-lightgrey)
-![CodeQL](https://img.shields.io/badge/CodeQL-configurar-lightgrey)
-![Code%20Quality](https://img.shields.io/badge/Code%20Quality-configurar-lightgrey)
-![Security](https://img.shields.io/badge/Security-configurar-lightgrey)
-
-> Atualize os badges acima com o slug real do repositório para refletir o status do CI e CodeQL.
+[![CI](https://github.com/ESousa97/alura-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/ESousa97/alura-docs/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/ESousa97/alura-docs/actions/workflows/codeql.yml/badge.svg)](https://github.com/ESousa97/alura-docs/actions/workflows/codeql.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/ESousa97/alura-docs/badge)](https://www.codefactor.io/repository/github/ESousa97/alura-docs)
 
 ## Visão geral
-Aplicação de documentos em tempo real com Express e Socket.IO.
+Aplicação de documentos em tempo real construída com Express e Socket.IO. Permite criar, editar e excluir documentos com sincronização instantânea entre clientes.
 
 ## Requisitos
 - Node.js 18+
+- MongoDB (local ou Atlas)
 
 ## Configuração
-Crie um arquivo .env com base em [.env.example](.env.example).
+Crie um arquivo .env com base em [.env.example](.env.example) e ajuste as variáveis:
 
-## Scripts
-- npm run start
-- npm run test
-- npm run lint
-- npm run format
-- npm run build
+- MONGODB_URI: string de conexão do MongoDB
+- porta: porta do servidor (padrão 3000)
 
 ## Execução
 ```bash
@@ -29,13 +23,24 @@ npm install
 npm run start
 ```
 
-## Testes
-```bash
-npm test
-```
+Em seguida, acesse http://localhost:3000.
 
-## Arquitetura
-- src/: backend Node.js
+## Modo teste (sem banco)
+Para rodar testes ou iniciar sem conexão com MongoDB, defina:
+
+- SKIP_DB=1
+ou
+- NODE_ENV=test
+
+## Scripts disponíveis
+- npm run start
+- npm run test
+- npm run lint
+- npm run format
+- npm run build
+
+## Estrutura do projeto
+- src/: backend Node.js (Express + Socket.IO)
 - public/: frontend estático
 - test/: testes automatizados
 
